@@ -1,11 +1,11 @@
 <?php 
 $myqsli = new mysqli("mysql.eecs.ku.edu","m926n810","Yi7saine","m926n810");
-if ($mysqli->connect_errno) {
+if ($mysqli->connect_error) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
     exit();
 }
 $userid = $_POST("user_id");
-$query = "INSERT INTO User ($userid)";
+$query = "INSERT INTO User ('$userid')";
 
 echo '<!DOCTYPE html>
 <html lang="en">
