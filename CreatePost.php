@@ -17,16 +17,16 @@ echo '<!DOCTYPE html>
             $userid = $_POST["user_id"];
             $post=$_POST["post"];
 
-            $validate_user = "SELECT user_id FROM Users WHERE user_id = '$userid'";
+            $validate_user = "SELECT * FROM Users WHERE user_id = '$userid'";
             $validate_result = $mysqli->query($validate_user);
+
             $query = "  INSERT INTO Post (post_id, content, author_id) 
                         VALUES (NULL, '$post','$userid')";
-                        
-            if($validate_result->num_rows == 0) echo "<h3>User $userid does not exist in the database!</h3>";
-            else{
+
+            if($validate_result->num_rows > 0) {
                 if($myqsli->query($query)===TRUE) echo " <h3>Created user $userid's post successfully!</h3>";
                 else echo "<h3>ERROR: ".$mysqli->error."</h3>";
-            }
+            }else echo "<h3>User $userid does not exist in the database!</h3>";
             $myqsli->close();
         }
         echo '</div></center></body></html>';
