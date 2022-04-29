@@ -24,9 +24,9 @@ echo '<!DOCTYPE html>
             if($validate_user->num_rows == 0) echo "<h3>User $userid does not exist in the database!</h3>";
             else{
                 if($myqsli->query($query)===TRUE) echo " <h3>Created user $userid's post successfully!</h3>";
-                else echo "ERROR: ".$mysqli->error;
+                else echo "<h3>ERROR: ".$mysqli->error."</h3>";
             }
+            $myqsli->close();
         }
         echo '</div></center></body></html>';
-    $myqsli->close();
 ?>

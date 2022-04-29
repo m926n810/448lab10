@@ -19,8 +19,8 @@ echo '<!DOCTYPE html>
                         VALUES ('$userid')";
             
             if($myqsli->query($query)===TRUE) echo "<h3> Created user $userid successfully!</h3>";
-            else echo "ERROR: ".$mysqli->error;
+            else echo "<h3>ERROR: ".$mysqli->error."</h3>";
+            $myqsli->close();
         }
     echo '</div></center></body></html>';
-    $myqsli->close();
 ?>
