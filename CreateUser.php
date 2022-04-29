@@ -15,7 +15,7 @@ echo '<!DOCTYPE html>
             die("Connect failed: ".$myqsli->connect_error);
         }else{
             $userid = $_POST("user_id");
-            $query = "  INSERT INTO User (user_id) 
+            $query = "  INSERT INTO Users (user_id) 
                         VALUES ($userid)";
             
             if($myqsli->query($query)===TRUE) echo "<h3> Created user $userid successfully!</h3>";
