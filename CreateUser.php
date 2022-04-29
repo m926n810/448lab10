@@ -21,4 +21,5 @@ echo '<!DOCTYPE html>
             else echo "ERROR: ".$mysqli->error;
         }
     echo '</div></center>';
+    $myqsli->close();
 ?>
