@@ -21,3 +21,6 @@ input[type="submit"]:hover{
     background-color:darksalmon;
     color:beige;
 }
+.postfield{
+    min-width: 400px;
+}
