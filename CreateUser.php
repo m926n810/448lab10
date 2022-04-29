@@ -21,6 +21,6 @@ echo '<!DOCTYPE html>
             if($myqsli->query($query)===TRUE) echo "<h3> Created user $userid successfully!</h3>";
             else echo "ERROR: ".$mysqli->error;
         }
-    echo '</div></center>';
+    echo '</div></center></body></html>';
     $myqsli->close();
 ?>

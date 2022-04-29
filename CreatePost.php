@@ -15,7 +15,7 @@ echo '<!DOCTYPE html>
             die("Connect failed: ".$myqsli->connect_error);
         }else{
             $userid = $_POST["user_id"];
-            $post=$_POST["postfield"];
+            $post=$_POST["post"];
 
             $validate_user = $mysqli->query("SELECT user_id FROM User WHERE user_id = '$userid'");
             
@@ -27,6 +27,6 @@ echo '<!DOCTYPE html>
                 else echo "ERROR: ".$mysqli->error;
             }
         }
-    echo '</div></center>';
+        echo '</div></center></body></html>';
     $myqsli->close();
 ?>
