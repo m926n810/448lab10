@@ -14,7 +14,7 @@ echo '<!DOCTYPE html>
         if ($mysqli->connect_error) {
             die("Connect failed: ".$myqsli->connect_error);
         }else{
-            $userid = $_POST("user_id");
+            $userid = $_POST["user_id"];
             $query = "  INSERT INTO Users (user_id) 
                         VALUES ($userid)";
             
