@@ -16,7 +16,7 @@ echo '<!DOCTYPE html>
         }else{
             $userid = $_POST["user_id"];
             $query = "  INSERT INTO Users (user_id) 
-                        VALUES ($userid)";
+                        VALUES ('$userid')";
             
             if($myqsli->query($query)===TRUE) echo "<h3> Created user $userid successfully!</h3>";
             else echo "ERROR: ".$mysqli->error;
