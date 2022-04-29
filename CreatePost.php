@@ -17,7 +17,7 @@ echo '<!DOCTYPE html>
             $userid = $_POST["user_id"];
             $post=$_POST["post"];
 
-            $validate_user = $mysqli->query("SELECT user_id FROM User WHERE user_id = '$userid'");
+            $validate_user = $mysqli->query("SELECT user_id FROM Users WHERE user_id = '$userid'");
             
             $query = "  INSERT INTO Post (content, author_id) 
                         VALUES ('$post','$userid')";
