@@ -12,7 +12,7 @@ echo '<head>
             $userid = $_POST["user_id"];
             $post = $_POST["post"];
 
-            $validate_user = "SELECT user_id FROM Users WHERE user_id = '$userid'";
+            $validate_user = "SELECT user_id FROM Users WHERE user_id = '".$userid."'";
             $query = "  INSERT INTO Post (post_id, content, author_id) 
                         VALUES (NULL, '$post','$userid')";
             echo $validate_user;
