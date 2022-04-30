@@ -20,7 +20,8 @@ echo '<head>
                 while($row = $result->fetch_assoc()){
                     if($row["user_is"] == $userid) $validate = TRUE;
                 }
-            $result->free();
+                $result->free();
+            }
             if($validate){
                 if($myqsli->query($query)===TRUE) echo " <h3>Created user $userid's post successfully!</h3>";
                 else echo "<h3>ERROR: ".$mysqli->error."</h3>";
