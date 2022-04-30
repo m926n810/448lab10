@@ -15,13 +15,20 @@ echo '<!DOCTYPE html>
             die("Connect failed: ".$myqsli->connect_error);
         }else{
             $userid = $_POST["user_id"];
-            $post=$_POST["post"];
+            $post = $_POST["post"];
+
+            echo $userid;
+            echo $post;
 
             $validate_user = "SELECT * FROM Users WHERE user_id = '$userid'";
             $validate_result = $mysqli->query($validate_user);
 
+            echo $validate_user;
+
             $query = "  INSERT INTO Post (post_id, content, author_id) 
                         VALUES (NULL, '$post','$userid')";
+
+            echo $query;
 
             if($validate_result->num_rows > 0) {
                 if($myqsli->query($query)===TRUE) echo " <h3>Created user $userid's post successfully!</h3>";
