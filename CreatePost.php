@@ -14,18 +14,13 @@ echo '<head>
             $validate = FALSE;
 
             $validateuser = "SELECT user_id FROM Users";
-            $query = "INSERT INTO Post (post_id, content, author_id) VALUES (NULL, '$post','$userid')";
 
             if($result = $database->query($validateuser)) {
                 while($row = $result->fetch_assoc()){
-                    if($row["user_id"] == $userid) $validate = TRUE;
+                   echo "<h3>".$row["user_id"]."</h3>";
                 }
                 $result->free();
             }
-            if($validate){
-                if($myqsli->query($query)===TRUE) echo " <h3>Created user $userid's post successfully!</h3>";
-                else echo "<h3>ERROR: ".$database->error."</h3>";
-            }else echo "<h3>User $userid does not exist in the database!</h3>";
             $database->close();
         }
         echo '</div></center></body></html>';
