@@ -13,7 +13,7 @@ echo '<head>
             $post = $_POST["post"];
             $validate = FALSE;
 
-            $validateuser = "SELECT user_id FROM Users";
+            $validateuser = "SELECT user_id FROM Users WHERE user_id = '$userid'";
 
             if($result = $database->query($validateuser)) {
                 while($row = $result->fetch_assoc()){
