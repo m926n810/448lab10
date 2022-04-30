@@ -24,8 +24,7 @@ echo '<head>
             }
 
             if($validate){
-                if($myqsli->query($query)===TRUE) echo " <h3>Created user $userid's post successfully!</h3>";
-                else echo "<h3>ERROR: ".$database->error."</h3>";
+                echo "<h3>User $userid exists in the database!</h3>";
             }else echo "<h3>User $userid does not exist in the database!</h3>";
 
             $database->close();
