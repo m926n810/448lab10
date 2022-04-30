@@ -14,7 +14,7 @@ echo '<head>
             $validate = FALSE;
 
             $validateuser = "SELECT user_id FROM Users WHERE user_id = '$userid'";
-            $query = "INSERT INTO Post (post_id,content,author_id) VALUES (NULL,'$post','$userid')";
+            $query = "INSERT INTO Post (content,author_id) VALUES ('$post','$userid')";
 
             if($result = $database->query($validateuser)) {
                 while($row = $result->fetch_assoc()){
