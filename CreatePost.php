@@ -15,7 +15,7 @@ echo '<head>
             $validate_user = "SELECT user_id FROM Users WHERE user_id = '$userid'";
             $query = "  INSERT INTO Post (post_id, content, author_id) 
                         VALUES (NULL, '$post','$userid')";
-
+            echo $validate_user;
             if($mysqli->query($validate_user)===TRUE) {
                 if($myqsli->query($query)===TRUE) echo " <h3>Created user $userid's post successfully!</h3>";
                 else echo "<h3>ERROR: ".$mysqli->error."</h3>";
