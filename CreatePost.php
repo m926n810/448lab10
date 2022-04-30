@@ -21,7 +21,8 @@ echo '<!DOCTYPE html>
             echo $post;
 
             $validate_user = "SELECT * FROM Users WHERE user_id = '$userid'";
-            $validate_result = $mysqli->query($validate_user);
+            if($mysqli->query($validate_user) ===TRUE ) echo "TRUE";
+            else echo "false";
 
             echo $validate_user;
 
