@@ -6,7 +6,7 @@ echo '<head>
 <body>
     <div class="center"><center>';
         $database = new mysqli("mysql.eecs.ku.edu","m926n810","Yi7saine","m926n810");
-        if ($mysqli->connect_error) {
+        if ($database->connect_error) {
             die("Connect failed: ".$myqsli->connect_error);
         }else{
             $userid = $_POST["user_id"];
