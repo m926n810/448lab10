@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Board system - admin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="center">
+        <center><h1>Message Board system</h1>
+        <form action="Viewpost.php" method="post">
+        <?php
+            $database = new mysqli("mysql.eecs.ku.edu","m926n810","Yi7saine","m926n810");
+            if ($database->connect_error) {
+                die("Connect failed: ".$myqsli->connect_error);
+            }else{
+                $query = "SELECT * FROM Users";
+    
+                if($result = $database->query($query)) {
+                    echo '<label for="userid">Choose an user: </label>
+                    <select name="userid">';
+                    while($row = $result->fetch_assoc()){
+                        $user = $row['user_id'];
+                        echo "<option value='$user'>$user</option>";
+                    }
+                    echo "</select>";
+                    $result->free();
+                }
+                $database->close();
+            }
+        ?>
+        <input type="submit" value="View post">
+    </form></center>
+</div>
+</body>
+</html>
