@@ -26,7 +26,7 @@ echo '<head>
                 echo "</table>";
                 $result->free();
             }else{
-                echo "<h3>We have no user yet :(</h3>"
+                echo "<h3>We have no user yet :(</h3>";
             }
             $database->close();
         }
