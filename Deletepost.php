@@ -15,7 +15,7 @@ echo '<head>
             $query="";
             for($i=1;$i<=$result->num_rows;$i++){
                 $delete = $_POST["$i"];
-                if($delete = $i) $query .="DELETE FROM Post WHERE post_id = '$delete'";
+                if($delete == $i) $query .="DELETE FROM Post WHERE post_id = '$delete'";
             }
             echo $query;
             $database->close();
