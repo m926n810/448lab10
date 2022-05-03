@@ -30,8 +30,9 @@ table{
     width: 600px;
 }
 td{
-    border-bottom: 1px solid #02312ff0;
+    border-bottom: 0.8px solid rgb(252, 252, 241);
 }
 th{
     text-align: left;
+    border-bottom: 1.5px solid rgb(252, 252, 241);
 }
