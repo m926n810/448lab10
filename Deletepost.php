@@ -11,9 +11,12 @@ echo '<head>
         if ($database->connect_error) {
             die("Connect failed: ".$myqsli->connect_error);
         }else{
-            $delete1 = $_POST["1"];
-            $delete2 = $_POST["2"];
-            echo $delete1. $delete2;
+            $result = $database->query("SELECT * FROM Post");
+            echo "num rows ". $result->num_rows;
+            for($i=1;$i<$result->num_rows;$i++){
+                $delete = $_POST["$i"];
+                echo $delete;
+            }
             $database->close();
         }
         echo '</center></div></body></html>';
