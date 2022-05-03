@@ -12,14 +12,16 @@ echo '<head>
             die("Connect failed: ".$myqsli->connect_error);
         }else{
             $result = $database->query("SELECT * FROM Post");
-            for($i=1;$i<=$result->num_rows;$i++){
-                $delete = $_POST["$i"];
-                if($delete == $i){
+            while($row = $result->fetch_assoc()){
+                $rowid  = $row['post_id'];
+                $delete = $_POST["$rowid"];
+                if($delete == $rowid){
                     $query ="DELETE FROM Post WHERE post_id = '$delete'";
                     if($database->query($query)===TRUE) echo "<h5>$i</h5>";
                     else echo "<h5>Error: ???</h5>";
                 }
             }
+            $result->free;
             $database->close();
         }
         echo '</center></div></body></html>';
