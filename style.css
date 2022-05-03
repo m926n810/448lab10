@@ -12,12 +12,16 @@ body{
     color:rgb(252, 252, 241);
     padding: 20px;
 }
-input[type="submit"]{
+input[type=submit], button{
     margin-top: 12px;
     background-color: beige;
     border-radius: 5px;
+    width: 140px;
+    height:40px;
+    font-size: 20px;
+    font-family: serif;
 }
-input[type="submit"]:hover{
+input[type="submit"]:hover, button:hover{
     background-color:darksalmon;
     color:beige;
 }
