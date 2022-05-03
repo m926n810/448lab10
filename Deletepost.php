@@ -13,7 +13,7 @@ echo '<head>
         }else{
             $result = $database->query("SELECT * FROM Post");
             echo "num rows ". $result->num_rows;
-            for($i=1;$i<$result->num_rows;$i++){
+            for($i=1;$i<=$result->num_rows;$i++){
                 $delete = $_POST["$i"];
                 echo $delete;
             }
