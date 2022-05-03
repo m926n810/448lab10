@@ -10,23 +10,34 @@
 <body>
     <div class="center">
         <center><h1>Message Board system</h1>
-        <form action="Viewpost.php" method="post">
+        <form action="Deletepost.php" method="post">
         <?php
             $database = new mysqli("mysql.eecs.ku.edu","m926n810","Yi7saine","m926n810");
             if ($database->connect_error) {
                 die("Connect failed: ".$myqsli->connect_error);
             }else{
-                $query = "SELECT * FROM Users";
+                $query = "SELECT * FROM Post";
     
                 if($result = $database->query($query)) {
-                    echo '<label for="userid">Choose an user: </label>
-                    <select name="userid">';
+                    echo '<table><tr>
+                        <th>Delete?</th>
+                        <th>Post id</th>
+                        <th>Content</th>
+                        <th>author id</th>
+                    </tr>
+                    ';
                     while($row = $result->fetch_assoc()){
-                        $user = $row['user_id'];
-                        echo "<option value='$user'>$user</option>";
+                        echo "<tr>
+                        <input type='checkbox' name='delete' value='". $row['post_id']."'>
+                        <td>".$row['post_id']."</td>
+                        <td>".$row['content']."</td>
+                        <td>".$row['author_id']."</td>
+                    </tr>";
                     }
-                    echo "</select>";
+                    echo "</table>";
                     $result->free();
+                }else{
+                    echo "<h3>This user has no post yet </h3>";
                 }
                 $database->close();
             }
