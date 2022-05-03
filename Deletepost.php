@@ -21,7 +21,7 @@ echo '<head>
                     else echo "<h5>Error: ???</h5>";
                 }
             }
-            $result->free;
+            $result->free();
             $database->close();
         }
         echo '</center></div></body></html>';
