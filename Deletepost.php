@@ -17,7 +17,7 @@ echo '<head>
                 $delete = $_POST["$rowid"];
                 if($delete == $rowid){
                     $query ="DELETE FROM Post WHERE post_id = '$delete'";
-                    if($database->query($query)===TRUE) echo "<h5>$i</h5>";
+                    if($database->query($query)===TRUE) echo "<h5>$rowid</h5>";
                     else echo "<h5>Error: ???</h5>";
                 }
             }
